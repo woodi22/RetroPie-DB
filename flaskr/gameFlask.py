@@ -10,7 +10,7 @@ def home():
 
 @app.route('/current')
 def current():
-   if(r.get('end_time') == None and r.get('start_time' != None)):
+   if(r.get('end_time') < r.get('start_time')):
       current_game = r.get('current_game')
       return jsonify(current_game.decode())
    else:
